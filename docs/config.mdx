@@ -253,9 +253,9 @@ All managed preference keys appear in the resolved config and cannot be overridd
 
 ## Schema
 
-The server/runtime config schema is defined in [**`opencode.ai/config.json`**](https://raw.githubusercontent.com/QueryAI-org/QueryAI/schema/config.json).
+The server/runtime config schema is published at [**`QueryAI-org/QueryAI/schema/config.json`**](https://raw.githubusercontent.com/QueryAI-org/QueryAI/schema/config.json).
 
-TUI config uses [**`opencode.ai/tui.json`**](https://opencode.ai/tui.json).
+TUI config (`tui.json`) has no published schema, so leave `$schema` out of it.
 
 Your editor should be able to validate and autocomplete based on the schema.
 
@@ -267,7 +267,6 @@ Use a dedicated `tui.json` (or `tui.jsonc`) file for TUI-specific settings.
 
 ```json title="tui.json"
 {
-  "$schema": "https://opencode.ai/tui.json",
   "scroll_speed": 3,
   "scroll_acceleration": {
     "enabled": true
@@ -492,7 +491,6 @@ Set your UI theme in `tui.json`.
 
 ```json title="tui.json"
 {
-  "$schema": "https://opencode.ai/tui.json",
   "theme": "tokyonight"
 }
 ```
@@ -612,7 +610,6 @@ Customize TUI keyboard shortcuts in `tui.json` with `keybinds`.
 
 ```json title="tui.json"
 {
-  "$schema": "https://opencode.ai/tui.json",
   "keybinds": {
     "command_list": "ctrl+p"
   }

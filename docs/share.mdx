@@ -15,9 +15,26 @@ Shared conversations are publicly accessible to anyone with the link.
 
 When you share a conversation, QueryAI:
 
-1. Creates a unique public URL for your session
-2. Syncs your conversation history to our servers
-3. Makes the conversation accessible via the shareable link — `opncd.ai/s/<share-id>`
+1. Uploads the session to the share server you configured
+2. Creates a unique public URL for it on that server
+3. Keeps the shared copy in sync as the conversation continues
+
+---
+
+## Setting up a share server
+
+Sharing is off until you point QueryAI at a share server you run. There is no default server, so nothing is uploaded to a host you did not choose.
+
+`packages/share-worker` in the QueryAI source deploys one to your own Cloudflare account. Put its URL in your [config file](/docs/config):
+
+```json title="queryai.json"
+{
+  "$schema": "https://raw.githubusercontent.com/QueryAI-org/QueryAI/schema/config.json",
+  "share_url": "https://queryai-share.<you>.workers.dev"
+}
+```
+
+Or set the `QUERYAI_SHARE_URL` environment variable.
 
 ---
 
@@ -114,15 +131,3 @@ includes:
 - Unshare conversations when collaboration is complete.
 - Avoid sharing conversations with proprietary code or confidential data.
 - For sensitive projects, disable sharing entirely.
-
----
-
-## For enterprises
-
-For enterprise deployments, the share feature can be:
-
-- **Disabled** entirely for security compliance
-- **Restricted** to users authenticated through SSO only
-- **Self-hosted** on your own infrastructure
-
-[Learn more](/docs/enterprise) about using queryai in your organization.

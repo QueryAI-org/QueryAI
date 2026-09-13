@@ -31,62 +31,23 @@ To use QueryAI in your terminal, you'll need:
 
 ## Install
 
-The easiest way to install QueryAI is through the install script.
+Pick one of these.
 
-```bash
-curl -fsSL https://opencode.ai/install | bash
-```
-
-You can also install it with the following commands:
-
-- **Using Node.js**
-
-        <Tabs>
-
-      <TabItem label="npm">
-      ```bash
-      npm install -g opencode-ai
-      ```
-
-          </TabItem>
-
-        <TabItem label="Bun">
-        ```bash
-        bun install -g opencode-ai
-        ```
-
-          </TabItem>
-
-        <TabItem label="pnpm">
-        ```bash
-        pnpm install -g opencode-ai
-        ```
-
-          </TabItem>
-
-        <TabItem label="Yarn">
-        ```bash
-        yarn global add opencode-ai
-        ```
-
-      </TabItem>
-
-  </Tabs>
-
-- **Using Homebrew on macOS and Linux**
+- **macOS and Linux: install script**
 
   ```bash
-  brew install anomalyco/tap/opencode
+  curl -fsSL https://raw.githubusercontent.com/QueryAI-org/QueryAI/main/install | bash
   ```
 
-  > We recommend using the QueryAI tap for the most up to date releases. The official `brew install opencode` formula is maintained by the Homebrew team and is updated less frequently.
+  This puts a single binary in `~/.queryai/bin` and adds it to your `PATH`. To skip the `PATH` edit, append `-s -- --no-modify-path`.
 
-- **Installing on Arch Linux**
+- **Any platform: npm**
 
   ```bash
-  sudo pacman -S opencode           # Arch Linux (Stable)
-  paru -S opencode-bin              # Arch Linux (Latest from AUR)
+  npm install -g queryai
   ```
+
+  `pnpm` and `yarn` work too.
 
 #### Windows
 
@@ -94,59 +55,23 @@ You can also install it with the following commands:
 For the best experience on Windows, we recommend using [Windows Subsystem for Linux (WSL)](/docs/windows-wsl). It provides better performance and full compatibility with QueryAI's features.
 :::
 
-- **Using Chocolatey**
-
-  ```bash
-  choco install opencode
-  ```
-
-- **Using Scoop**
-
-  ```bash
-  scoop install opencode
-  ```
-
-- **Using NPM**
-
-  ```bash
-  npm install -g opencode-ai
-  ```
-
-- **Using Mise**
-
-  ```bash
-  mise use -g github:anomalyco/opencode
-  ```
-
-- **Using Docker**
-
-  ```bash
-  docker run -it --rm ghcr.io/anomalyco/opencode
-  ```
-
-Support for installing QueryAI on Windows using Bun is currently in progress.
-
-You can also grab the binary from the [Releases](https://github.com/anomalyco/opencode/releases).
+Use the npm route above, or download the `queryai-windows-x64.zip` asset from [Releases](https://github.com/QueryAI-org/QueryAI/releases), unzip it, and put `queryai.exe` somewhere on your `PATH`.
 
 ---
 
 ## Configure
 
-With QueryAI you can use any LLM provider by configuring their API keys.
+QueryAI has no models of its own. It talks to LLM providers using your API keys, and most providers have a free tier.
 
-If you are new to using LLM providers, we recommend using [QueryAI Zen](/docs/zen).
-It's a curated list of models that have been tested and verified by the QueryAI
-team.
+1. Start the interactive login and pick a provider from the list:
 
-1. Run the `/connect` command in the TUI, select queryai, and head to [opencode.ai/auth](https://opencode.ai/auth).
-
-   ```txt
-   /connect
+   ```bash
+   queryai providers login
    ```
 
-2. Sign in, add your billing details, and copy your API key.
+   You can also run the `/connect` command in the TUI.
 
-3. Paste your API key.
+2. Get an API key from that provider, then paste it.
 
    ```txt
    ┌ API key
@@ -155,7 +80,7 @@ team.
    └ enter
    ```
 
-Alternatively, you can select one of the other providers. [Learn more](/docs/providers#directory).
+See the [provider directory](/docs/providers#directory) for provider-specific steps.
 
 ---
 
@@ -348,8 +273,6 @@ This will create a link to the current conversation and copy it to your clipboar
 :::note
 Conversations are not shared by default.
 :::
-
-Here's an [example conversation](https://opencode.ai/s/4XP1fce5) with QueryAI.
 
 ---
 

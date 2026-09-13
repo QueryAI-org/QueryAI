@@ -182,45 +182,6 @@ queryai auth logout
 
 ---
 
-### github
-
-Manage the GitHub agent for repository automation.
-
-```bash
-queryai github [command]
-```
-
----
-
-#### install
-
-Install the GitHub agent in your repository.
-
-```bash
-queryai github install
-```
-
-This sets up the necessary GitHub Actions workflow and guides you through the configuration process. [Learn more](/docs/github).
-
----
-
-#### run
-
-Run the GitHub agent. This is typically used in GitHub Actions.
-
-```bash
-queryai github run
-```
-
-##### Flags
-
-| Flag                                  | Description                            |
-| ------------------------------------- | -------------------------------------- |
-| <nobr><code>{"--event"}</code></nobr> | GitHub mock event to run the agent for |
-| <nobr><code>{"--token"}</code></nobr> | GitHub personal access token           |
-
----
-
 ### mcp
 
 Manage Model Context Protocol servers.
@@ -493,7 +454,7 @@ You can import from a local file or an QueryAI share URL.
 
 ```bash
 queryai import session.json
-queryai import https://opncd.ai/s/abc123
+queryai import https://queryai-share.<you>.workers.dev/share/abc123
 ```
 
 ---
