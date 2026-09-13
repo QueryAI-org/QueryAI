@@ -37,15 +37,7 @@ tsconfig.tsbuildinfo
 .dolt/
 *.db
 .beads-credential-key
-.beads/proxieddb/
-
-packages/
-newSSH
-newSSH.pub
-sshKEY
-sshKEY.pub
-*.pem
-id_ed25519
+.beads/
 
 packages/
 newSSH
